@@ -1,7 +1,20 @@
 const { Router } = require("express");
+const jwt = require("jsonwebtoken");
+const { userModel } = require("../db");
+const { JWT_SECRET_USER } = require("../config");
 const userRouter = Router();
 
-userRouter.post('/signup', function(req, res) {
+
+userRouter.post('/signup',async function(req, res) {
+
+    const { email, password, firstName, lastName } = req.body;
+
+    await userModel.create({
+        email: email,
+        password: password,
+        firstName: firstName,
+        lastName: lastName
+    })
 
     res.json({
         message: "you signed up successfully"
@@ -9,11 +22,27 @@ userRouter.post('/signup', function(req, res) {
 
 });
 
-userRouter.post('/signin', function(req, res) {
+userRouter.post('/signin', async function(req, res) {
+    const { email, password } = req.body;
 
-    res.json({
-        message: "you signed in successfully"
-    })
+   const user = await userModel.findOne({
+        email:email,
+        password: password
+    });
+
+    if(user) {
+        const token = jwt.sign({
+            id: user._id
+        },JWT_SECRET_USER);
+
+        res.json({
+            token: token
+        });
+    } else {
+        res.status(403).json({
+            message: "wrong credentials"
+        });
+    }
 
 });
 

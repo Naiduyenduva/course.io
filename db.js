@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-console.log("monoose connected");
-mongoose.connect("mongodb+srv://luckyrkb16:lucky123@cluster0.udmxssz.mongodb.net/full-stack-app");
-
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 
