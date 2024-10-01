@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 const { userModel, purchaseModel, courseModel } = require("../db");
 const { JWT_SECRET_USER } = require("../config");
@@ -9,10 +10,11 @@ const { userMiddleware } = require("../middlewares/user");
 userRouter.post('/signup',async function(req, res) {
 
     const { email, password, firstName, lastName } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     await userModel.create({
         email: email,
-        password: password,
+        password: hashedPassword,
         firstName: firstName,
         lastName: lastName
     })
@@ -28,10 +30,11 @@ userRouter.post('/signin', async function(req, res) {
 
    const user = await userModel.findOne({
         email:email,
-        password: password
     });
 
-    if(user) {
+    const checkPassword = bcrypt.compare(password,user.password)
+
+    if(user && checkPassword) {
         const token = jwt.sign({
             id: user._id
         },JWT_SECRET_USER);

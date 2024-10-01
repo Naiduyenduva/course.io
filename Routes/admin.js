@@ -4,14 +4,17 @@ const  { adminModel, courseModel } = require("../db");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET_ADMIN } = require("../config");
 const {adminMiddleware} = require("../middlewares/admin")
+const bcrypt = require("bcrypt");
 
 adminRouter.post('/signup', async function(req, res) {
 
     const { email, password, firstName, lastName } = req.body;
 
+    const hashedPassword =await bcrypt.hash(password,10);
+
     await adminModel.create({
         email: email,
-        password: password,
+        password: hashedPassword,
         firstName: firstName,
         lastName: lastName
     });
@@ -29,10 +32,11 @@ adminRouter.post('/signin', async function(req, res) {
 
     const admin = await adminModel.findOne({
         email:email,
-        password: password
     });
 
-    if(admin) {
+    const checkPassword = bcrypt.compare(password,admin.password);
+
+    if(admin && checkPassword) {
         const token = jwt.sign({
             id: admin._id
         },JWT_SECRET_ADMIN);
