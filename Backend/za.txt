@@ -1,0 +1,6 @@
+token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzA4MGU0MmI2ODg4NjMxNTdlMTE2OSIsImlhdCI6MTczMTIzMjA3NH0.QEGfJiwNSd-DGhpM1M24hEceIIeft9uzKM5y-egle6k
+
+
+{
+    "courseId" : "66fbc48bb0a4b9d5011fb6d8"
+}

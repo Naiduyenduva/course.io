@@ -67,7 +67,8 @@ userRouter.post('/purchases', userMiddleware,async function(req, res) {
         _id: { $in: purchaseID }
     })
     res.json({
-        message: "You purchased the course succesfully"
+        message: "You purchased the course succesfully",
+        courseData
     })
 });
 

@@ -14,7 +14,6 @@ function adminMiddleware (req, res, next) {
             message : "you are not signed in"
         })
     }
-
 }
 
 module.exports = {
