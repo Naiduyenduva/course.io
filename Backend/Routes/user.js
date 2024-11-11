@@ -9,14 +9,13 @@ const { userMiddleware } = require("../middlewares/user");
 
 userRouter.post('/signup',async function(req, res) {
 
-    const { email, password, firstName, lastName } = req.body;
+    const { email, password, fullName } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await userModel.create({
         email: email,
         password: hashedPassword,
-        firstName: firstName,
-        lastName: lastName
+        fullName: fullName
     })
 
     res.json({
