@@ -1,14 +1,14 @@
 import './App.css'
-import LandingPage from './components/LandingPage'
-// import Signup from './components/Signup'
+// import LandingPage from './components/LandingPage'
+import Signup from './components/Signup'
 // import Login from './components/login'
 
 function App() {
 
   return (
     <>
-      <LandingPage />
-      {/* <Signup />         */}
+      {/* <LandingPage /> */}
+      <Signup />        
       {/* <Login /> */}
     </>
   )
