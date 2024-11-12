@@ -1,13 +1,15 @@
 import './App.css'
-import Signup from './components/signup'
-import Login from './components/login'
+import LandingPage from './components/LandingPage'
+// import Signup from './components/Signup'
+// import Login from './components/login'
 
 function App() {
 
   return (
     <>
-      <Signup />        
-      <Login />
+      <LandingPage />
+      {/* <Signup />         */}
+      {/* <Login /> */}
     </>
   )
 }
