@@ -43,9 +43,9 @@ const Signup = () => {
 
   return (
     <>
-    <div className='grid justify-center place-items-center h-full text-black bg-black pt-10 '>
-        <h1 className="text-[#d4d4d8] text-xl font-semibold tracking-tighter sm:text-4xl md:text-5xl lg:text-4xl/none pr-20">Create an account</h1>
-      <div className='p-16 pt-10 rounded-lg h-600 w-700 text-white font-medium text-xl'>
+    <div className='grid justify-center place-items-center min-h-screen text-black bg-black pt-8 '>
+      <div className='pt-8 rounded-lg h-fit max-w-[700px] w-full text-white font-medium text-xl'>
+        <h1 className="text-[#d4d4d8] text-xl font-semibold tracking-tighter sm:text-4xl md:text-5xl lg:text-4xl/none mb-5">Create your account</h1>
           <form onSubmit={handleSubmit}>
             <label>Email</label><br/>
               <input 
@@ -74,7 +74,7 @@ const Signup = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 /><br/>
-              <button className='bg-blue-600 text-white w-500 p-0 h-14 rounded-lg '>Signup</button>
+              <button className='bg-blue-600 text-white w-500 p-0 h-12 rounded-lg '>Signup</button>
                 <h1 className='mt-3'>Alread have an account? Login</h1>
           </form>
       </div>

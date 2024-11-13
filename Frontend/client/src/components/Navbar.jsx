@@ -1,15 +1,19 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import { BookOpenText } from 'lucide-react';
+
 
 export const Navbar = () => {
   return (
     <>
-        <div className=' flex justify-around h-10 mb-20 pt-4 text-blue-200 text-center gap-20 text-xl font-semibold'>
-          <div>
-            <h1>Course.io</h1>
-            </div>
+        <div className='flex justify-around bg-black h-20 pt-4 text-center gap-20 text-xl font-semibold'>
+          <div className='flex gap-2'>
+          <Link to='/'><BookOpenText color='white' className='mt-2'/></Link>
+            <h1 className='text-blue-200 font-bold text-2xl'>Course.io</h1>
+          </div>
           <div className='flex justify-center gap-5'>
-            <h1>Signup</h1>
-            <h1>Login</h1>
+         <Link to='/signup'><button className='p-2 h-10 rounded-lg text-sm w-20 bg-blue-600 text-white'>Signup</button></Link>
+          <Link to='login'><button className='p-2 w-20 h-10 bg-blue-600 rounded-lg text-white text-sm'>Login</button></Link>
           </div>
         </div>
     </>
