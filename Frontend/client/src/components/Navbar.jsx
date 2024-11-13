@@ -6,7 +6,7 @@ import { BookOpenText } from 'lucide-react';
 export const Navbar = () => {
   return (
     <>
-        <div className='flex justify-between bg-black h-20 pt-4 text-center gap-20 text-xl font-semibold'>
+        <div className='flex justify-between bg-black h-20 pt-4 text-center gap-20 text-xl font-semibold border border-black border-b-slate-900'>
           <div className='flex gap-2 ml-20'>
           <Link to='/'><BookOpenText color='white' className='mt-2'/></Link>
             <h1 className='text-blue-200 font-bold text-2xl'>Course.io</h1>

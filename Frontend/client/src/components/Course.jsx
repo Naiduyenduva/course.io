@@ -9,37 +9,31 @@ const Course = () => {
             title: "Python Full stack",
             price: "2390",
             Description: "Python + Django + Flask etc..",
-            image: "https://img.youtube.com/vi/UrsmFxEIp5k/sddefault.jpg"
+            image: "https://img.youtube.com/vi/UrsmFxEIp5k/mqdefault.jpg"
         },
         {
             title: "Java Full stack",
             price: "2090",
             Description: "Java + Spring + Springboot etc..",
-            image: "https://img.youtube.com/vi/Nv2DERaMx-4/sddefault.jpg"
-        },
-        {
-            title: "MERN Stack",
-            price: "2499",
-            Description: "Node + Express + React + MongoDb etc..",
-            image: "https://img.youtube.com/vi/ZxKM3DCV2kE/sddefault.jpg"
-        },
-        {
-            title: "Python Full stack",
-            price: "2390",
-            Description: "Python + Django + Flask etc..",
-            image: "https://img.youtube.com/vi/UrsmFxEIp5k/sddefault.jpg"
-        },
-        {
-            title: "Java Full stack",
-            price: "2090",
-            Description: "Java + Spring + Springboot etc..",
-            image: "https://img.youtube.com/vi/Nv2DERaMx-4/sddefault.jpg"
+            image: "https://img.youtube.com/vi/L0v_3MzC1io/mqdefault.jpg"
         },
         {
             title: "MERN Stack",
             price: "2499",
             Description: "Node + Express + React + Mongo etc..",
-            image: "https://img.youtube.com/vi/ZxKM3DCV2kE/sddefault.jpg"
+            image: "https://img.youtube.com/vi/fwwOkyKpBDM/mqdefault.jpg"
+        },
+        {
+            title: "Artificial intelligence course",
+            price: "2390",
+            Description: "Python + Django + Flask etc..",
+            image: "https://img.youtube.com/vi/7IgVGSaQPaw/mqdefault.jpg"
+        },
+        {
+            title: "Data structures & Algorithms",
+            price: "2090",
+            Description: "Java + Spring + Springboot etc..",
+            image: "https://img.youtube.com/vi/rZ41y93P2Qo/mqdefault.jpg"
         }
     ]
   return (
