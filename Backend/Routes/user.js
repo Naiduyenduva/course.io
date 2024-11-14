@@ -79,12 +79,6 @@ userRouter.post('/purchases', userMiddleware,async function(req, res) {
     })
 });
 
-userRouter.get('/course/preview', function(req, res) {
-    res.json({
-        message: "all courses"
-    })
-});
-
 module.exports = {
     userRouter: userRouter
 }
