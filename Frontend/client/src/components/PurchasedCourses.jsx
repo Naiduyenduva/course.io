@@ -1,12 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Navigate } from 'react-router-dom';
 import Course from './Course';
 
 const PurchasedCourses = ( {setIsLoggedIn}) => {
         const [purchasedData, setPurchasedData] = useState([]);
         const [error, setError] = useState(null);
-
 
         useEffect(()=> {
             const token = localStorage.getItem('token');
