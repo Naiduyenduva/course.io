@@ -4,7 +4,6 @@ import { IndianRupee } from 'lucide-react';
 
 const Course = ({courses}) => {
     
-   console.log("hii")
   return (
     <div className='grid grid-cols-3 gap-5'>
         {
