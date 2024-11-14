@@ -4,20 +4,25 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import AllCourses from './components/AllCourses'
+import PurchasedCourses from './components/PurchasedCourses'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <>
     <Router>
     <nav className='fixed w-full'>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
     </nav>
     <div>
       <Routes>
-        <Route path='/' element={<AllCourses />} />
-        <Route path='/1' element={<LandingPage />} />
+        <Route path='/p' element={<PurchasedCourses setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path='/allCourses' element={<AllCourses setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path='/' element={<LandingPage />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
       </Routes>

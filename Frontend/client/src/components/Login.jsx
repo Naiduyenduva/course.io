@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
 
   const handleEmailChange = (e) => {
       setEmail(e.target.value)
@@ -32,6 +35,7 @@ const Login = () => {
       }
       const data = await response.json();
       localStorage.setItem('token',data.token)
+      navigate('/p')
       
     } catch(err) {
       setError(err.message)

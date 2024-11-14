@@ -22,7 +22,7 @@ courseRouter.get('/preview',async function(req, res) {
     const courses = await courseModel.find({});
 
     res.json({
-        message: "Get all your purchased courses",
+        message: "Get all your courses",
         courses
     })
 });
