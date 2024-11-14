@@ -20,8 +20,8 @@ function App() {
     </nav>
     <div>
       <Routes>
-        <Route path='/p' element={<PurchasedCourses setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path='/allCourses' element={<AllCourses setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path='/purchasedCourses' element={<PurchasedCourses setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path='/allCourses' element={<AllCourses isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
         <Route path='/' element={<LandingPage />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />

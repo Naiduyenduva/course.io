@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import Course from './Course'
 
-const AllCourses = () => {
+const AllCourses = ({isLoggedIn}) => {
 
   const [allCourses, setAllCourses] = useState([]);
   const [error, setError] = useState(null);
@@ -9,7 +9,7 @@ const AllCourses = () => {
   useEffect(()=> {
     async function handleData () {
         try {
-            const response = await fetch('http://localhost:3000/course/preview',{
+            const response = await fetch('https://course-io.onrender.com/course/preview',{
                 method:'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const AllCourses = () => {
         <div className='grid bg-black gap-3'>
           <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Our Courses</h1>
             <div className='text-red-900 ml-28 '>
-                <Course courses={allCourses} />
+                <Course courses={allCourses} isLoggedIn={isLoggedIn} />
             </div>
         </div>
     </div>

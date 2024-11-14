@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/user/signin',{
+      const response = await fetch('https://course-io.onrender.com/user/signin',{
         method: 'POST',
         headers: {
           'Content-Type': "application/json"
@@ -35,7 +35,7 @@ const Login = () => {
       }
       const data = await response.json();
       localStorage.setItem('token',data.token)
-      navigate('/p')
+      navigate('/purchasedCourses')
       
     } catch(err) {
       setError(err.message)

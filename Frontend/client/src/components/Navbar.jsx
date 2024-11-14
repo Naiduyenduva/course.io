@@ -19,6 +19,8 @@ export const Navbar = ({isLoggedIn,setIsLoggedIn}) => {
           </div>
           {isLoggedIn ? (
                <>
+              <Link to='/allCourses'> <h1 className='p-2 h-10 rounded-lg text-sm bg-blue-600 text-white mr-10'>All Courses</h1></Link>
+              <Link to='/purchasedCourses'> <h1 className='p-2 h-10 rounded-lg text-sm bg-blue-600 text-white mr-10'>Purchased Courses</h1></Link>
                <Link to='/'><button onClick={logout} className='p-2 h-10 rounded-lg text-sm w-20 bg-blue-600 text-white mr-10'>Logout </button> </Link> 
                </>
             ) : (
