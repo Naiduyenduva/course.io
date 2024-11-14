@@ -10,6 +10,11 @@ const { userMiddleware } = require("../middlewares/user");
 userRouter.post('/signup',async function(req, res) {
 
     const { email, password, fullName } = req.body;
+
+    const existingUser = await userModel.findOne({ email: email });
+    if (existingUser) {
+        return res.status(400).json({ message: "Email is already in use" });
+    }
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await userModel.create({
@@ -30,6 +35,9 @@ userRouter.post('/signin', async function(req, res) {
    const user = await userModel.findOne({
         email:email,
     });
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
     const checkPassword = bcrypt.compare(password,user.password)
 

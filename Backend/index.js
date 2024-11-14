@@ -16,9 +16,11 @@ app.use("/user", userRouter);
 app.use("/course", courseRouter);
 app.use("/admin", adminRouter);
 
+const PORT = process.env.PORT || 3000;
+
 async function main () {
     await mongoose.connect(process.env.MONGO_URL);
-    app.listen(3000);
+    app.listen(PORT);
     console.log("port started");
 }
 
