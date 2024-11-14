@@ -4,9 +4,16 @@ import Course from './Course'
 const AllCourses = ({isLoggedIn}) => {
 
   const [allCourses, setAllCourses] = useState([]);
+  const [loggedin, setLoggedIn] = useState(false)
   const [error, setError] = useState(null);
 
   useEffect(()=> {
+    const token = localStorage.getItem('token');
+    if(token) {
+      setLoggedIn(true)
+    } else {
+      setLoggedIn(false)
+    }
     async function handleData () {
         try {
             const response = await fetch('https://course-io.onrender.com/course/preview',{
@@ -33,7 +40,7 @@ const AllCourses = ({isLoggedIn}) => {
         <div className='grid bg-black gap-3'>
           <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Our Courses</h1>
             <div className='text-red-900 ml-28 '>
-                <Course courses={allCourses} isLoggedIn={isLoggedIn} />
+                <Course courses={allCourses} logged={loggedin} />
             </div>
         </div>
     </div>

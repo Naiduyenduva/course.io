@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IndianRupee } from 'lucide-react';
 
 
-const Course = ({courses, isLoggedIn}) => {
+const Course = ({courses,logged}) => {
+
     
   return (
     <div className='grid grid-cols-3 gap-5'>
@@ -17,7 +18,7 @@ const Course = ({courses, isLoggedIn}) => {
                         <h2 className='font-bold'>{item.price}</h2>
                     </div>
                     {
-                        isLoggedIn ? (
+                        logged ? (
                             <div className='flex'>
                             <button className='bg-blue-700 text-white w-24 h-8 rounded-3xl ml-7 mr-5 mt-3 mb-3 p-1 '>View Details</button>
                             <button className='bg-green-700 text-white w-24 h-8 rounded-3xl mt-3 mb-3'>Purchase</button>

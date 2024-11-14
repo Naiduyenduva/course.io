@@ -21,7 +21,7 @@ function App() {
     <div>
       <Routes>
         <Route path='/purchasedCourses' element={<PurchasedCourses setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path='/allCourses' element={<AllCourses isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path='/allCourses' element={<AllCourses />} />
         <Route path='/' element={<LandingPage />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
