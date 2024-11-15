@@ -40,7 +40,6 @@ const Signup = () => {
         }
       }
 
-
   return (
     <>
     <div className='grid justify-center place-items-center min-h-screen text-black bg-black pt-8 '>
