@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IndianRupee } from 'lucide-react';
 
 
-const Course = ({courses,logged}) => {
-        const [courseid, setCourseid] = useState(null);
+const Course = ({courses,logged,onSenddata}) => {
+        // const [courseid, setCourseid] = useState(null);
 
-        function handleCourseid (item) {
-           setCourseid(item.title)
-        }
-        console.log(courseid);
+        // function handleCourseid (item) {
+        //    setCourseid(item._id)
+        // }
+        // console.log(courseid);
 
-        
+        // const sendMessageToParent = () => {
+        //     onSenddata(courseid);
+        //   };
     
   return (
     <div className='grid grid-cols-3 gap-5'>
@@ -28,7 +30,7 @@ const Course = ({courses,logged}) => {
                         logged ? (
                             <div className='flex'>
                             <button className='bg-blue-700 text-white w-24 h-8 rounded-3xl ml-7 mr-5 mt-3 mb-3 p-1 '>View Details</button>
-                            <button className='bg-green-700 text-white w-24 h-8 rounded-3xl mt-3 mb-3' onClick={()=>{handleCourseid(item)}}>Purchase</button>
+                            <button className='bg-green-700 text-white w-24 h-8 rounded-3xl mt-3 mb-3' onClick={()=>{onSenddata(item._id);}}>Purchase</button>
                             </div>
                         ) : (
                             <>
