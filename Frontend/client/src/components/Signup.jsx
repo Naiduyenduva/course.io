@@ -42,13 +42,13 @@ const Signup = () => {
 
   return (
     <>
-    <div className='grid justify-center place-items-center min-h-screen text-black bg-black pt-8 '>
+    <div className='grid justify-center place-items-center min-h-screen text-black bg-black'>
       <div className='pt-8 rounded-lg h-fit max-w-[700px] w-full text-white font-medium text-xl'>
-        <h1 className="text-[#d4d4d8] text-xl font-semibold tracking-tighter sm:text-4xl md:text-5xl lg:text-4xl/none mb-5">Create your account</h1>
+        <h1 className="text-[#d4d4d8] text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl lg:text-4xl/none mb-5 mt-20 lg:mt-5 lg:ml-0">Create your account</h1>
           <form onSubmit={handleSubmit}>
             <label>Email</label><br/>
               <input 
-                className='rounded-lg h-12 w-500 p-2 bg-gray-900 mt-3 text-white'
+                className='rounded-lg h-12 w-72 lg:w-500 p-2 bg-gray-900 mt-3 text-white'
                 type="text" 
                 name="email" 
                 required={true}
@@ -58,7 +58,7 @@ const Signup = () => {
             <label>Password</label><br/>
               <input 
                 type="text" 
-                className='rounded-lg w-500 h-12 p-2 bg-gray-900 mt-3 text-white'
+                className='rounded-lg w-72 lg:w-500 h-12 p-2 bg-gray-900 mt-3 text-white'
                 name="password" 
                 required={true}
                 value={formData.password}
@@ -67,14 +67,14 @@ const Signup = () => {
             <label>Fullname</label><br/>
               <input 
                 type="text" 
-                className='rounded-lg mb-5 w-500 h-12 bg-gray-900 mt-3 text-white'
+                className='rounded-lg w-72 mb-5 lg:w-500 h-12 bg-gray-900 mt-3 text-white'
                 name="fullName" 
                 required={true}
                 value={formData.fullName}
                 onChange={handleChange}
                 /><br/>
-              <button className='bg-blue-600 text-white w-500 p-0 h-12 rounded-lg '>Signup</button>
-                <h1 className='mt-3'>Alread have an account? Login</h1>
+              <button className='bg-blue-600 text-white w-72 lg:w-500 p-0 h-12 rounded-lg '>Signup</button>
+                <h1 className='mt-3 lg:mb-0 mb-5'>Alread have an account? Login</h1>
           </form>
       </div>
     </div>

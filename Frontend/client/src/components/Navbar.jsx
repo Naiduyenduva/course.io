@@ -5,10 +5,10 @@ import { BookOpenText } from 'lucide-react';
 
 export const Navbar = ({isLoggedIn,setIsLoggedIn}) => {
 
-  function logout() {
-    localStorage.removeItem('token');
-    setIsLoggedIn(false);
-  }
+    function logout() {
+      localStorage.removeItem('token');
+      setIsLoggedIn(false);
+    }
 
   return (
     <>

@@ -46,11 +46,11 @@ const Login = () => {
     <>
     <div className='grid justify-center items-center min-h-screen max-h-fit text-black bg-black '>
       <div className='rounded-lg max-w-[700px] w-full h-fit text-white font-medium text-xl'>
-        <h1 className="text-[#d4d4d8] text-xl font-semibold mb-5 tracking-tighter sm:text-4xl md:text-5xl lg:text-4xl/none">Login to your account</h1>
+        <h1 className="text-[#d4d4d8] text-3xl font-semibold mb-5 tracking-tighter sm:text-4xl md:text-5xl lg:text-4xl/none">Login to your account</h1>
       <form onSubmit={handleSubmit}>
         <label>Email</label><br/>
           <input 
-          className='rounded-lg h-12 w-500 p-2 bg-gray-900 mt-3 text-white'
+          className='rounded-lg h-12 w-72 lg:w-500 p-2 bg-gray-900 mt-3 text-white'
           type='text'
           name='email'
           required={true}
@@ -59,14 +59,14 @@ const Login = () => {
           /><br/>
           <label>Password</label><br/>
           <input
-          className='rounded-lg h-12 w-500 p-2 bg-gray-900 mt-3 text-white mb-5'
+          className='rounded-lg h-12 w-72 lg:w-500 p-2 bg-gray-900 mt-3 text-white mb-5'
           type='password'
           name='password'
           required={true}
           value={password}
           onChange={handlePasswordChange}
           /><br/>
-          <button className='bg-blue-600 text-white w-500 p-0 h-12 rounded-lg'>Login</button>
+          <button className='bg-blue-600 text-white w-72 lg:w-500 p-0 h-12 rounded-lg'>Login</button>
       </form>
       </div>
       </div>
