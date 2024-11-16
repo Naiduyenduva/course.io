@@ -35,7 +35,7 @@ const Login = () => {
       }
       const data = await response.json();
       localStorage.setItem('token',data.token)
-      navigate('/purchasedCourses')
+      navigate('/allCourses')
       
     } catch(err) {
       setError(err.message)

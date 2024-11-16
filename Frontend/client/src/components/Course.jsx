@@ -3,16 +3,6 @@ import { IndianRupee } from 'lucide-react';
 
 
 const Course = ({courses,logged,onSenddata}) => {
-        // const [courseid, setCourseid] = useState(null);
-
-        // function handleCourseid (item) {
-        //    setCourseid(item._id)
-        // }
-        // console.log(courseid);
-
-        // const sendMessageToParent = () => {
-        //     onSenddata(courseid);
-        //   };
     
   return (
     <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
