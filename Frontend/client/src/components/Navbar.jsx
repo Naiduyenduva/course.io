@@ -14,8 +14,8 @@ export const Navbar = ({isLoggedIn,setIsLoggedIn}) => {
     <>
         <div className='flex justify-between bg-black h-20 pt-4 text-center gap-20 text-xl font-semibold border border-black border-b-slate-900'>
           <div className='flex gap-2 lg:ml-20'>
-            <Link to='/'><BookOpenText color='white' className='mt-2 ml-5'/></Link>
-            <h1 className='text-blue-200 font-bold text-2xl lg:text-2xl'>Course.io</h1>
+            <Link to='/'><BookOpenText color='white' size={20} className='mt-2 ml-5'/></Link>
+            <h1 className='text-blue-200 font-bold text-xl lg:text-2xl'>Course.io</h1>
           </div>
           {isLoggedIn ? (
                <>
