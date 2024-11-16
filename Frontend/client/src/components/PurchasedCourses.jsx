@@ -38,7 +38,7 @@ const PurchasedCourses = ( {setIsLoggedIn}) => {
   return (
     <div className='grid bg-black text-white min-h-screen'>
               <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Purchased Courses</h1>
-        <div className='ml-24'>
+        <div className='ml-10 lg:ml-24 mt-5'>
             <Course courses={purchasedData} />
         </div>
     </div>

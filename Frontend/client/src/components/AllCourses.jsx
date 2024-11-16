@@ -63,7 +63,7 @@ const AllCourses = ({isLoggedIn}) => {
     <div>
         <div className='grid bg-black gap-3'>
           <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Our Courses</h1>
-            <div className='text-red-900 ml-28 '>
+            <div className='text-red-900 ml-10 lg:ml-28'>
                 <Course courses={allCourses} logged={loggedin} onSenddata={handleSubmit} />
             </div>
         </div>

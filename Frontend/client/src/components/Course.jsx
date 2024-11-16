@@ -15,7 +15,7 @@ const Course = ({courses,logged,onSenddata}) => {
         //   };
     
   return (
-    <div className='grid grid-cols-3 gap-5'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
         {
             courses.map((item)=> (
                 <div className='bg-slate-900 h-fit w-72 border border-gray-200 rounded-xl text-white ml-0 mb-10' key={item._id}>
