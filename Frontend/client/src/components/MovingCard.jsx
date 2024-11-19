@@ -8,7 +8,7 @@ export default function MovingCard() {
     "https://img.youtube.com/vi/UrsmFxEIp5k/sddefault.jpg",
   ]
 
-  const baseVelocity = -15 // Increased speed
+  const baseVelocity = -5 // Increased speed
   const containerRef = useRef(null)
   const baseX = useRef(0)
 
@@ -42,7 +42,7 @@ export default function MovingCard() {
                   key={`set${setIndex}-${imgIndex}`}
                   src={src}
                   alt={`Flowing image ${imgIndex + 1}`}
-                  width={350}
+                  width={300}
                   height={200}
                   className="rounded-lg shadow-md object-cover ml-10 h-60"
                   loading="lazy"
