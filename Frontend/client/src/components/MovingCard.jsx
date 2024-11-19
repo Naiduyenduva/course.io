@@ -8,7 +8,7 @@ export default function MovingCard() {
     "https://img.youtube.com/vi/UrsmFxEIp5k/sddefault.jpg",
   ]
 
-  const baseVelocity = -5 // Increased speed
+  const baseVelocity = -20 // Increased speed
   const containerRef = useRef(null)
   const baseX = useRef(0)
 
