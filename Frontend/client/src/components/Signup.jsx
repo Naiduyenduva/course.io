@@ -22,7 +22,7 @@ const Signup = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-          const response = await fetch('https://course-io.onrender.com/user/signup',{
+          const response = await fetch('https://course-io-muwx.vercel.app/user/signup',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

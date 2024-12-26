@@ -17,7 +17,7 @@ const AllCourses = ({isLoggedIn}) => {
 
     async function handleData () {
         try {
-            const response = await fetch('https://course-io.onrender.com/course/preview',{
+            const response = await fetch('https://course-io-muwx.vercel.app/course/preview',{
                 method:'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const AllCourses = ({isLoggedIn}) => {
   const handleSubmit = async (courseId) => {
       try{
         const token1 = localStorage.getItem('token');
-        const response = await fetch('https://course-io.onrender.com/course/purchase',{
+        const response = await fetch('https://course-io-muwx.vercel.app/course/purchase',{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
