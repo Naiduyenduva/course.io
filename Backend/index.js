@@ -16,6 +16,10 @@ app.use("/user", userRouter);
 app.use("/course", courseRouter);
 app.use("/admin", adminRouter);
 
+app.get('/', (req, res) => {
+    res.send('Hello World')
+  })
+
 const PORT = process.env.PORT || 3000;
 
 async function main () {
