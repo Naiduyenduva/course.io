@@ -6,6 +6,7 @@ const AllCourses = ({isLoggedIn}) => {
   const [allCourses, setAllCourses] = useState([]);
   const [loggedin, setLoggedIn] = useState(false)
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(()=> {
       const token = localStorage.getItem('token');
@@ -23,6 +24,7 @@ const AllCourses = ({isLoggedIn}) => {
                     'Content-Type': 'application/json',
                 },
             });
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
               }
@@ -30,6 +32,8 @@ const AllCourses = ({isLoggedIn}) => {
               setAllCourses(fetchedData.courses)
         } catch(err) {
             setError(err.message)
+        } finally {
+          setLoading(false)
         }
     }
     handleData();
@@ -61,12 +65,20 @@ const AllCourses = ({isLoggedIn}) => {
 
   return (
     <div>
+    {
+      loading ? (
+        <div className='grid'>
+        <h1 className='text-white text-center text-3xl sm:text-5xl pt-48 bg-black h-screen font-semibold'>Loading...</h1>
+        </div>
+      ):(
         <div className='grid bg-black gap-3'>
           <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Our Courses</h1>
             <div className='text-red-900 ml-10 lg:ml-28'>
                 <Course courses={allCourses} logged={loggedin} onSenddata={handleSubmit} />
             </div>
         </div>
+      )
+    }
     </div>
   )
 }

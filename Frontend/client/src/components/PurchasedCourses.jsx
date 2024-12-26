@@ -5,6 +5,7 @@ import Course from './Course';
 const PurchasedCourses = ( {setIsLoggedIn}) => {
         const [purchasedData, setPurchasedData] = useState([]);
         const [error, setError] = useState(null);
+        const [loading, setLoading] = useState(true)
 
         useEffect(()=> {
             const token = localStorage.getItem('token');
@@ -30,18 +31,31 @@ const PurchasedCourses = ( {setIsLoggedIn}) => {
                       console.log(purchasedData);
                 } catch(err) {
                     setError(err.message)
+                } finally {
+                    setLoading(false)
                 }
             }
             handleData();
         },[])
 
   return (
-    <div className='grid bg-black text-white min-h-screen'>
-              <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Purchased Courses</h1>
-        <div className='ml-10 lg:ml-24 mt-5'>
-            <Course courses={purchasedData} />
-        </div>
-    </div>
+    <>
+      {
+          loading ? (
+            <div className='pt-48 text-white bg-black h-screen text-center sm:text-5xl text-3xl font-semibold'>
+            <h1>Loading...</h1>
+            </div>
+          ):(
+              
+            <div className='grid bg-black text-white min-h-screen'>
+                <h1 className='text-white mt-24 font-bold text-center	text-2xl'>Purchased Courses</h1>
+                <div className='ml-10 lg:ml-24 mt-5'>
+                    <Course courses={purchasedData} />
+                </div>
+            </div>
+        )
+    }
+              </>
   )
 }
 
